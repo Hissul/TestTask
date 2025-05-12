@@ -1,0 +1,30 @@
+﻿@model MvcProject.Models.Book
+
+<h2>Добавить книгу</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Название</label>
+        <input asp-for="Title" />
+    </div>
+    <div>
+        <label>Автор</label>
+        <input asp-for="Author" />
+    </div>
+    <div>
+        <label>Год издания</label>
+        <input asp-for="YearPublished" />
+    </div>
+    <div>
+        <label>Жанр</label>
+        <input asp-for="Genre" />
+    </div>
+    <div>
+        <label>Оглавление (HTML → XML)</label>
+        <textarea asp-for="TableOfContents" id="editor"></textarea>
+    </div>
+    <button type="submit">Сохранить</button>
+</form>
+
+<script src="https://cdn.ckeditor.com/4.25.1-lts/standard/ckeditor.js"></script>
+<script>CKEDITOR.replace('editor');</script>

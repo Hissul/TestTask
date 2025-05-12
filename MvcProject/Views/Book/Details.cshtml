@@ -1,0 +1,33 @@
+﻿@model Book
+
+@{
+    ViewData["Title"] = "Детали книги";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Название</dt>
+            <dd class="col-sm-9">@Model.Title</dd>
+
+            <dt class="col-sm-3">Автор</dt>
+            <dd class="col-sm-9">@Model.Author</dd>
+
+            <dt class="col-sm-3">Год издания</dt>
+            <dd class="col-sm-9">@Model.YearPublished</dd>
+
+            <dt class="col-sm-3">Жанр</dt>
+            <dd class="col-sm-9">@Model.Genre</dd>            
+
+            <dt class="col-sm-3">Оглавление</dt>
+            <dd class="col-sm-9">
+                @Html.Raw(Model.TableOfContents)
+            </dd>
+        </dl>
+
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Редактировать</a>
+        <a asp-action="Index" class="btn btn-secondary">Назад к списку</a>
+    </div>
+</div>
